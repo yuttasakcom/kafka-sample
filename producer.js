@@ -1,14 +1,14 @@
 var kafka = require("kafka-node"),
   Producer = kafka.Producer,
   KeyedMessage = kafka.KeyedMessage,
-  client = new kafka.KafkaClient({ kafkaHost: "localhost:2181" }),
+  client = new kafka.KafkaClient({ kafkaHost: "localhost:9092" }),
   producer = new Producer(client),
   km = new KeyedMessage("key", "message"),
   payloads = [
-    { topic: "topic1", messages: "test", partition: 0 },
-    { topic: "topic2", messages: ["hello", "world", km] },
+    { topic: "Topic1", messages: "test", partition: "1" },
+    // { topic: "topic2", messages: ["hello", "world", km] },
   ];
-producer.on("ready", function() {
+producer.on("ready", () => {
   console.log("Producer is Ready!");
   producer.send(payloads, (err, data) => {
     if (err) {
