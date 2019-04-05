@@ -1,7 +1,7 @@
 var kafka = require("kafka-node"),
   Producer = kafka.Producer,
   KeyedMessage = kafka.KeyedMessage,
-  client = new kafka.KafkaClient({ kafkaHost: "localhost:32769" }),
+  client = new kafka.KafkaClient({ kafkaHost: "localhost:2181" }),
   producer = new Producer(client),
   km = new KeyedMessage("key", "message"),
   payloads = [
