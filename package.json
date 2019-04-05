@@ -1,0 +1,17 @@
+{
+  "name": "kafka-sample",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Yuttasak Pannawat <yuttasakcom@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "consumer": "nodemon consumer.js",
+    "producer": "nodemon producer.js"
+  },
+  "dependencies": {
+    "kafka-node": "^4.0.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
